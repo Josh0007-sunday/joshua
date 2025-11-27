@@ -141,90 +141,90 @@ const LandingPage = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="h-screen flex items-center">
+      <section className="min-h-screen md:h-screen flex items-center pt-16 md:pt-0">
         <div className="w-full h-full">
-          <div className="grid md:grid-cols-2 gap-0 h-full">
-            {/* Left Side - Image as Background (50% of screen) */}
+          <div className="flex flex-col md:grid md:grid-cols-2 gap-0 min-h-screen md:h-full">
+            {/* Left Side - Image as Background (50% of screen on desktop, top on mobile) */}
             <div
-              className="h-full relative bg-contain bg-center bg-no-repeat"
+              className="h-64 md:h-full relative bg-contain bg-center bg-no-repeat order-1"
               style={{
-                backgroundImage: `linear-gradient(to bottom, #777d7d, #646464ff), url(${joshuaImage})`,
+                backgroundImage: `linear-gradient(to bottom, #777d7d, #2d2d2b), url(${joshuaImage})`,
                 backgroundBlendMode: 'multiply, normal',
                 backgroundColor: '#777d7d'
               }}
             >
             </div>
 
-            {/* Right Side - Content (50% of screen) */}
-            <div className="h-screen flex items-center justify-center px-8 lg:px-16">
-              <div className="space-y-6 max-w-xl">
+            {/* Right Side - Content (50% of screen on desktop, bottom on mobile) */}
+            <div className="min-h-screen md:h-screen flex items-center justify-center px-4 sm:px-8 lg:px-16 py-8 md:py-0 order-2">
+              <div className="space-y-4 md:space-y-6 max-w-xl w-full">
               {/* Congratulations and Josh on same line */}
-              <h2 className="text-6xl md:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-600 font-serif italic">
-                Congratulations <span className="font-bold text-white not-italic font-sans">Blockchain_Josh</span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-600 font-serif italic leading-tight">
+                Congratulations <span className="font-bold text-white not-italic font-sans">Josh</span>
               </h2>
 
               {/* Bio */}
               <div className="space-y-4">
-                <p className="text-lg text-white/90 leading-relaxed">
+                <p className="text-base sm:text-lg text-white/90 leading-relaxed">
                   I am a developer building on Solana, schooled at Rivers State University,
                   where I completed 5 years and was awarded a BSc.
                 </p>
               </div>
 
               {/* Countdown */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                <h4 className="text-white/80 text-sm uppercase tracking-wider mb-4 text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20">
+                <h4 className="text-white/80 text-xs sm:text-sm uppercase tracking-wider mb-3 sm:mb-4 text-center">
                   Countdown to December 5th
                 </h4>
-                <div className="grid grid-cols-4 gap-4">
+                <div className="grid grid-cols-4 gap-2 sm:gap-4">
                   <div className="text-center">
-                    <div className="text-3xl md:text-4xl font-bold text-white">
+                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
                       {timeRemaining.days}
                     </div>
-                    <div className="text-xs text-white/60 uppercase mt-1">Days</div>
+                    <div className="text-[10px] sm:text-xs text-white/60 uppercase mt-1">Days</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl md:text-4xl font-bold text-white">
+                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
                       {timeRemaining.hours}
                     </div>
-                    <div className="text-xs text-white/60 uppercase mt-1">Hours</div>
+                    <div className="text-[10px] sm:text-xs text-white/60 uppercase mt-1">Hours</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl md:text-4xl font-bold text-white">
+                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
                       {timeRemaining.minutes}
                     </div>
-                    <div className="text-xs text-white/60 uppercase mt-1">Minutes</div>
+                    <div className="text-[10px] sm:text-xs text-white/60 uppercase mt-1">Minutes</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl md:text-4xl font-bold text-white">
+                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
                       {timeRemaining.seconds}
                     </div>
-                    <div className="text-xs text-white/60 uppercase mt-1">Seconds</div>
+                    <div className="text-[10px] sm:text-xs text-white/60 uppercase mt-1">Seconds</div>
                   </div>
                 </div>
               </div>
 
               {/* Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button className="px-8 py-3 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-all">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
+                <button className="px-6 sm:px-8 py-3 bg-white/10 backdrop-blur-sm text-white text-sm sm:text-base font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-all">
                   See More
                 </button>
                 <button
                   onClick={() => navigate('/donate')}
-                  className="px-8 py-3 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-all"
+                  className="px-6 sm:px-8 py-3 bg-white/10 backdrop-blur-sm text-white text-sm sm:text-base font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-all"
                 >
                   Donate
                 </button>
                 <button
                   onClick={() => navigate('/create-ad')}
-                  className="px-8 py-3 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-all"
+                  className="px-6 sm:px-8 py-3 bg-white/10 backdrop-blur-sm text-white text-sm sm:text-base font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-all"
                 >
                   Create Ads
                 </button>
               </div>
 
               {/* Social Media Links */}
-              <div className="flex gap-6 pt-8 justify-center sm:justify-start">
+              <div className="flex gap-4 sm:gap-6 pt-6 sm:pt-8 justify-center sm:justify-start">
                 <a
                   href="https://x.com/blockchain_josh"
                   target="_blank"
@@ -232,7 +232,7 @@ const LandingPage = () => {
                   className="text-white/70 hover:text-white transition-colors transform hover:scale-110"
                   aria-label="X (Twitter)"
                 >
-                  <FaXTwitter size={28} />
+                  <FaXTwitter className="w-6 h-6 sm:w-7 sm:h-7" />
                 </a>
                 <a
                   href="https://github.com/Josh0007-sunday"
@@ -241,7 +241,7 @@ const LandingPage = () => {
                   className="text-white/70 hover:text-white transition-colors transform hover:scale-110"
                   aria-label="GitHub"
                 >
-                  <FaGithub size={28} />
+                  <FaGithub className="w-6 h-6 sm:w-7 sm:h-7" />
                 </a>
                 <a
                   href="https://t.me/joshdotlink"
@@ -250,7 +250,7 @@ const LandingPage = () => {
                   className="text-white/70 hover:text-white transition-colors transform hover:scale-110"
                   aria-label="Telegram"
                 >
-                  <FaTelegram size={28} />
+                  <FaTelegram className="w-6 h-6 sm:w-7 sm:h-7" />
                 </a>
               </div>
               </div>
